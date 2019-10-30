@@ -2,7 +2,7 @@
 
 This is a boilerplate/template project used to bootstrap a new React App. This is built using Create React App.
 
-This template includes routing, global state management, Typescript, SCSS (Bulma, to be specific) as well as API request.
+This template includes routing, global state management, Typescript, SCSS (Bulma, to be specific) as well as easy API requests with Axios and JWT management.
 
 ## Getting Started
 
