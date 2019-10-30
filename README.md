@@ -29,7 +29,3 @@ npm run serve
 * [React](https://reactjs.org/) - The web framework used
 * [Typescript](https://www.typescriptlang.org/) - A typed superset of JavaScript
 * [MobX](https://mobx.js.org/README.html) - State management tool
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
