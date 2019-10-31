@@ -1,7 +1,7 @@
 import React from "react";
 import {inject, observer} from "mobx-react";
 import {AuthStore} from "../../stores/modules/authStore";
-import {RouteComponentProps} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 
 import "./Login.scss"
 
@@ -23,12 +23,12 @@ interface InjectedProps {
 @observer
 export default class Login extends React.Component<{}, {}> {
 
+    public state: any = {
+        redirect: false
+    };
+
     public get injectedProps() {
         return this.props as InjectedProps;
-    }
-
-    public get routeProps() {
-        return this.props as RouteComponentProps<{}>
     }
 
     public user: IUser = {
@@ -37,6 +37,10 @@ export default class Login extends React.Component<{}, {}> {
     };
 
     render() {
+        if (this.state.redirect) {
+            return <Redirect to='/' />;
+        }
+
         return (
             <div className="Login">
                 <header className="Header">
@@ -65,12 +69,11 @@ export default class Login extends React.Component<{}, {}> {
         this.user[field] =  event.target.value;
     };
 
-
     private handleSubmitForm = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const { user } = this;
         this.injectedProps.authStore
             .login({user})
-            .then(() => this.routeProps.history.replace('/'))
+            .then(() => this.setState({redirect: true}))
     }
 }
