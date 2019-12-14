@@ -1,4 +1,4 @@
-# React-Typescript-MobX-Boilerplate
+# React-Typescript-MobX-Template
 
 This is a boilerplate/template project used to bootstrap a new React App. This is built using Create React App.
 
