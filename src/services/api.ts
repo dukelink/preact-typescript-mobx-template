@@ -32,7 +32,7 @@ export const register = async (credentials: RegistrationUser): Promise<User | st
             if (response.data !== '') {
                 return response.data.message;
             } else {
-                return 'Unknown error while logging in';
+                return 'Unknown error while registering';
             }
         });
 };
