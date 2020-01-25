@@ -18,9 +18,12 @@
 .env.test.local
 .env.production.local
 
-# IDE files
-.idea
-
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# KDE directory file
+.directory
+
+# JetBrains IDE files
+.idea/

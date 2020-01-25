@@ -1,7 +1,5 @@
-import authStore from './modules/authStore';
+import { createContext } from 'preact';
 
-export function createStores() {
-    return {
-        authStore,
-    }
-}
+import { authStore } from 'stores/authStore';
+
+export const AuthStoreContext = createContext(authStore);
