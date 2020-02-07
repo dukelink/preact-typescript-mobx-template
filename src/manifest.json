@@ -1,6 +1,6 @@
 {
-  "name": "Monmouthshire IoT",
-  "short_name": "Monmouthshire IoT",
+  "name": "Preact Typescript Mobx Template Application",
+  "short_name": "Preact Template",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
