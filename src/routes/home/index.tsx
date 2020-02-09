@@ -1,4 +1,4 @@
-import preact, { h } from 'preact';
+import { FunctionalComponent, h } from 'preact';
 import { useState } from 'preact/hooks';
 import { Link } from 'preact-router';
 
@@ -7,7 +7,7 @@ import Footer from 'components/Footer';
 
 import './style.scss';
 
-const Home: preact.FunctionalComponent = () => {
+const Home: FunctionalComponent = () => {
     const [burgerClicked, setBurgerClicked] = useState(false);
 
     return (

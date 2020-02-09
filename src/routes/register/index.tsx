@@ -1,4 +1,4 @@
-import preact, { h } from 'preact';
+import { FunctionalComponent, h } from 'preact';
 import { useContext, useEffect, useState } from 'preact/hooks';
 import { Link, route } from 'preact-router';
 import { observer } from 'mobx-react-lite';
@@ -11,7 +11,7 @@ import { AuthStoreContext } from 'stores';
 
 import './style.scss';
 
-const Register: preact.FunctionalComponent = observer(() => {
+const Register: FunctionalComponent = observer(() => {
     const authStore = useContext(AuthStoreContext);
 
     const [firstName, setFirstName] = useState('');
