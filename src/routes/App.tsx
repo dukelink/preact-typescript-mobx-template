@@ -1,13 +1,12 @@
-import preact, { h } from 'preact';
+import { FunctionalComponent, h } from 'preact';
 import { useContext, useState } from 'preact/hooks';
 import { getCurrentUrl, route, Route, Router, RouterOnChangeArgs } from 'preact-router';
 
+import Auth from 'routes/auth';
 import Home from 'routes/home';
-import Login from 'routes/login';
-import Register from 'routes/register';
 import { AuthStoreContext } from 'stores';
 
-const App: preact.FunctionalComponent = () => {
+const App: FunctionalComponent = () => {
     const authStore = useContext(AuthStoreContext);
 
     const [currentUrl, setCurrentUrl] = useState<string>(getCurrentUrl());
@@ -26,8 +25,8 @@ const App: preact.FunctionalComponent = () => {
             {authGuard()}
             <Router onChange={(e: RouterOnChangeArgs): void => setCurrentUrl(e.url)}>
                 <Route path="/" component={Home} />
-                <Route path="/login" component={Login} />
-                <Route path="/register" component={Register} />
+                <Route path="/login" component={Auth} />
+                <Route path="/register" component={Auth} />
             </Router>
         </div>
     );
