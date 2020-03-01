@@ -21,7 +21,7 @@ const Home: FunctionalComponent = () => {
                                     <img src={avatar} alt="He-Man" />
                                 </a>
                                 <span
-                                    class={'navbar-burger burger' + (burgerClicked ? ' is-active' : '')}
+                                    class={`navbar-burger burger${burgerClicked ? ' is-active' : ''}`}
                                     onClick={(): void => setBurgerClicked(!burgerClicked)}
                                 >
                                     <span />
@@ -29,7 +29,7 @@ const Home: FunctionalComponent = () => {
                                     <span />
                                 </span>
                             </div>
-                            <div class={'navbar-menu' + (burgerClicked ? ' is-active' : '')}>
+                            <div class={`navbar-menu${burgerClicked ? ' is-active' : ''}`}>
                                 <div class="navbar-end">
                                     <div class="tabs is-right">
                                         <ul>

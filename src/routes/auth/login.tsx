@@ -1,11 +1,17 @@
 import { FunctionalComponent, h } from 'preact';
 import { useContext, useEffect, useState } from 'preact/hooks';
 import { route } from 'preact-router';
-import { observer } from 'mobx-react-lite';
-import { LogIn } from 'react-feather';
+import { observer as mobxObserver } from 'mobx-react-lite';
+import { LogIn } from 'preact-feather';
 
 import { LoginUser } from 'models/User';
 import { AuthStoreContext } from 'stores';
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function observer<P>(props: P): any {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return mobxObserver(props as any);
+}
 
 const Login: FunctionalComponent = observer(() => {
     const authStore = useContext(AuthStoreContext);
@@ -64,11 +70,9 @@ const Login: FunctionalComponent = observer(() => {
                 </div>
             </div>
             <button
-                class={
-                    'button is-block is-deep-space-sparkle is-large is-fullwidth' + (inProgress ? ' is-loading' : '')
-                }
+                class={`button is-block is-deep-space-sparkle is-large is-fullwidth${inProgress ? ' is-loading' : ''}`}
                 type="button"
-                onClick={(): void => submitDetails()}
+                onClick={submitDetails}
             >
                 <div class="level">
                     <div class="level-item">

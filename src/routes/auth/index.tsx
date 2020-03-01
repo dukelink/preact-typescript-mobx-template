@@ -1,7 +1,7 @@
-import { FunctionalComponent, Fragment, h } from 'preact';
+import { ComponentChild, FunctionalComponent, Fragment, h } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 import { getCurrentUrl, Link } from 'preact-router';
-import { observer } from 'mobx-react-lite';
+import { observer as mobxObserver } from 'mobx-react-lite';
 
 import Footer from 'components/Footer';
 import Login from 'routes/auth/login';
@@ -9,11 +9,17 @@ import Register from 'routes/auth/register';
 
 import './style.scss';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function observer<P>(props: P): any {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return mobxObserver(props as any);
+}
+
 const Auth: FunctionalComponent = observer(() => {
     const [title, setTitle] = useState<string>('');
     const [subtitle, setSubtitle] = useState<string>('');
-    const [form, setForm] = useState<preact.ComponentChild>(null);
-    const [links, setLinks] = useState<preact.ComponentChild>(null);
+    const [form, setForm] = useState<ComponentChild>(null);
+    const [links, setLinks] = useState<ComponentChild>(null);
 
     useEffect(() => {
         switch (getCurrentUrl()) {

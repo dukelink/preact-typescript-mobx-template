@@ -1,7 +1,7 @@
 module.exports =  {
     parser:  '@typescript-eslint/parser',
     extends:  [
-        'plugin:react/recommended',
+        'preact',
         'plugin:@typescript-eslint/recommended',
         'prettier/@typescript-eslint',
         'plugin:prettier/recommended'
@@ -19,6 +19,7 @@ module.exports =  {
             jsx: true
         }
     },
+    ignorePatterns: ['build/'],
     rules:  {
         'indent': ['warn', 4, { "SwitchCase": 1, "ignoredNodes": ["TemplateLiteral > *"] }],
         'react/jsx-indent': ['warn', 4],
